@@ -14,7 +14,7 @@ services:
       - notes-app-nw
 
   django_app:
-   image: "shrutisakharkar/notes-app:latest"
+   image: "shrutisakharkar/notes-app:a2"
     image: django_app
     container_name: "django_cont"
     ports:
