@@ -14,14 +14,14 @@ pipeline {
 stage("Cloning") { 
             steps {        
                  script{      
-                clone('https://github.com/shrutisakharkar/django-notes-app.git','main') 
+                clone('https://github.com/thawaresameer715-cyber/django-notes-app-preTested.git','main') 
                    } 
             }
         }
         stage('build') {
             steps {
                 script {
-                    docker_build("notes-app", "latest", "shrutisakharkar")
+                    docker_build("notes-app", "latest", "sameerthaware")
                 }
             }
         }
@@ -29,7 +29,7 @@ stage("Cloning") {
         stage("push to dockerhub") {
             steps {
                 script {
-                    docker_push("notes-app", "latest", "shrutisakharkar")
+                    docker_push("notes-app", "latest", "sameerthaware")
                 }
             }
         }
@@ -37,7 +37,7 @@ stage("Cloning") {
         stage('deploying') {
             steps {
                 echo "deploying"
-                sh "docker compose up -d"
+                sh "docker-compose up -d"
             }
         }
     }
